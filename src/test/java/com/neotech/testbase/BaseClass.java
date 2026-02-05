@@ -70,6 +70,8 @@ public class BaseClass {
 		String url = ConfigsReader.getProperty("url");
 		driver.get(url);
 		
+		PageInitializer.initialize();
+		
 	}
 	
 	

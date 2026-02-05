@@ -54,7 +54,7 @@
 						<configuration>
 							<suiteXmlFiles>
 									<suiteXmlFile>
-										smoke.xml
+										addEmployee.xml
 									</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>

@@ -18,9 +18,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.io.Files;
-import com.neotech.testbase.BaseClass;
+import com.neotech.testbase.PageInitializer;
 
-public class CommonMethods extends BaseClass {
+public class CommonMethods extends PageInitializer {
 
 	/*
 	 * This method clears the text of a web element and sends the text parameter to

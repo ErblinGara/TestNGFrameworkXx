@@ -1,12 +1,10 @@
 package com.neotech.testcases;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.neotech.pages.AddEmployeePageElements;
-import com.neotech.pages.DashboardPageElements;
-import com.neotech.pages.LoginPageElements;
 import com.neotech.utils.CommonMethods;
 import com.neotech.utils.ConfigsReader;
 import com.neotech.utils.ExcelUtility;
@@ -16,41 +14,44 @@ public class AddEmployeeTest extends CommonMethods {
 	@Test(dataProvider = "excelData", groups = "addEmployee")
 	public void addEmployee(String firstName, String lastName, String location, String username, String password) {
 		
-		LoginPageElements loginPage = new LoginPageElements();
-		DashboardPageElements dashboard = new DashboardPageElements();
-		AddEmployeePageElements addEmployee = new AddEmployeePageElements();
+		//not needed anymore since PageInitializer initializes all page object classes
+//		LoginPageElements loginPage = new LoginPageElements();
+//		DashboardPageElements dashboard = new DashboardPageElements();
+//		AddEmployeePageElements addEmployee = new AddEmployeePageElements();
 		
 		sendText(loginPage.username, ConfigsReader.getProperty("username"));
 		sendText(loginPage.password, ConfigsReader.getProperty("password"));
 
 		click(loginPage.loginBtn);
 
-		click(dashboard.PIM);
+		click(dashboardPage.PIM);
 
-		click(dashboard.addEmployeeLink);
+		click(dashboardPage.addEmployeeLink);
 
 		waitForVisibility(By.id("first-name-box"));
 
-		sendText(addEmployee.firstName, firstName);
-		sendText(addEmployee.lastName, lastName);
+		sendText(addEmployeePage.firstName, firstName);
+		sendText(addEmployeePage.lastName, lastName);
 
-		click(addEmployee.location);
+		click(addEmployeePage.location);
 		click(driver.findElement(By.linkText(location)));
 
-		click(addEmployee.loginDetailsToggle);
+		click(addEmployeePage.loginDetailsToggle);
 
-		sendText(addEmployee.username, username);
-		sendText(addEmployee.password, password);
-		sendText(addEmployee.confirmPassword, password);
+		sendText(addEmployeePage.username, username);
+		sendText(addEmployeePage.password, password);
+		sendText(addEmployeePage.confirmPassword, password);
 
 		wait(2);
 
-		click(addEmployee.saveButton);
+		click(addEmployeePage.saveButton);
 
 		// executor.executeScript("arguments[0].click();",
 		// driver.findElement(By.xpath("//button[text()='Save']")));
 
 		waitForVisibility(By.id("personal_details_tab"));
+		personalDetailsPage.firstName.getText();
+		//Assert.assertEquals(personalDetailsPage.firstName.getText(), firstName);
 
 		takeScreenshot(username + ".png");
 
