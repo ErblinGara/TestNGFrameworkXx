@@ -20,41 +20,47 @@ public class LoginTest extends CommonMethods{
 		DashboardPageElements dashboard = new DashboardPageElements();
 
 		// send username
+		test.info("Entering username!");
 		sendText(loginPage.username, ConfigsReader.getProperty("username"));
 
 		// send password
-
+		
+		test.info("Entering password");
 		sendText(loginPage.password, ConfigsReader.getProperty("password"));
 
 		// click login button
 		
+		test.info("Clicking the login button");
 		click(loginPage.loginBtn);
 		//or use jsClick() or Actions.click()
 		
 		wait(2);
 		
 		// verify the account name
-		String expected = "Jacqueline White";
+		String expected = "Jacqueline Whitee";
 		String actual = dashboard.accountName.getText();
 		
 		//Assertion
+		test.info("Verifying account name");
 		Assert.assertEquals(actual, expected, "Account does not match");
 		
 	}
 	
-	@Test 
+	@Test (groups = "smoke")
 	public void emptyPassword() {
 		
 		LoginPageElements loginPage = new LoginPageElements();
 		
 		sendText(loginPage.username, ConfigsReader.getProperty("username"));
 		
+		test.info("Leaving password blank!");
 		
 		click(loginPage.loginBtn);
 		
 		String expected = "Password cannot be empty";
 		String actual = loginPage.passwordError.getText();
 		
+		test.info("Checking error message");
 		Assert.assertEquals(actual, expected, "The error message does not match");
 	}
 	

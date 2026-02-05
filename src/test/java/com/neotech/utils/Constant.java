@@ -6,6 +6,10 @@ public class Constant {
 	public static final int EXPLICIT_WAIT_TIME = 20;
 	
 	public static final int IMPLICIT_WAIT_TIME = 30;
+	
+	public static final String REPORT_FILEPATH = System.getProperty("user.dir") + "/target/html-reports/HRM.html";
+	
+	public static final String SCREENSHOT_FILEPATH = System.getProperty("user.dir") + "/screenshots/";
 
 
 }

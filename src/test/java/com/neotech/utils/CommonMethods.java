@@ -1,7 +1,9 @@
 package com.neotech.utils;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -142,7 +144,7 @@ public class CommonMethods extends BaseClass {
 			return null;
 		}
 	}
-	
+
 	/*
 	 * This method sends the provided text into the alert
 	 * 
@@ -158,7 +160,7 @@ public class CommonMethods extends BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*
 	 * This method switches to the frame using its name or id value
 	 * 
@@ -171,7 +173,7 @@ public class CommonMethods extends BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*
 	 * This method switches to the frame using its index value
 	 * 
@@ -184,7 +186,7 @@ public class CommonMethods extends BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*
 	 * This method switches to the frame using web element object
 	 * 
@@ -197,21 +199,21 @@ public class CommonMethods extends BaseClass {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/*
 	 * This method returns a wait object with default wait time
 	 */
 	public static WebDriverWait getWaitObject() {
 		return new WebDriverWait(driver, Duration.ofSeconds(Constant.EXPLICIT_WAIT_TIME));
 	}
-	
+
 	/*
 	 * This method returns a wait object with the provided wait time
 	 */
 	public static WebDriverWait getWaitObject(int secondsToWait) {
 		return new WebDriverWait(driver, Duration.ofSeconds(secondsToWait));
 	}
-	
+
 	/*
 	 * this method waits for the visibility of an element represented by its locator
 	 * 
@@ -221,9 +223,10 @@ public class CommonMethods extends BaseClass {
 		WebDriverWait wait = getWaitObject();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
-	
+
 	/*
-	 * this method waits for the visibility of an element represented by its web element
+	 * this method waits for the visibility of an element represented by its web
+	 * element
 	 * 
 	 * @param element
 	 */
@@ -231,7 +234,7 @@ public class CommonMethods extends BaseClass {
 		WebDriverWait wait = getWaitObject();
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-	
+
 	/*
 	 * This method wait or the clickability of a web element
 	 * 
@@ -241,12 +244,12 @@ public class CommonMethods extends BaseClass {
 		WebDriverWait wait = getWaitObject();
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-	
+
 	public static void waitForClickablity(By locator) {
 		WebDriverWait wait = getWaitObject();
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-	
+
 	/*
 	 * This method clicks on an element
 	 * 
@@ -256,14 +259,12 @@ public class CommonMethods extends BaseClass {
 		waitForClickablity(element);
 		element.click();
 	}
-	
-	
-	public static JavascriptExecutor getJSObject () {
-		
-		return(JavascriptExecutor) driver;
+
+	public static JavascriptExecutor getJSObject() {
+
+		return (JavascriptExecutor) driver;
 	}
-	
-	
+
 	/**
 	 * This method will click on an element using JavascriptExecutor
 	 * 
@@ -272,7 +273,7 @@ public class CommonMethods extends BaseClass {
 	public static void jsClick(WebElement element) {
 		getJSObject().executeScript("arguments[0].click()", element);
 	}
-	
+
 	/**
 	 * This method will scroll the page down based on the pixels provided
 	 * 
@@ -281,7 +282,7 @@ public class CommonMethods extends BaseClass {
 	public static void scrollDown(int pixels) {
 		getJSObject().executeScript("window.scrollBy(0," + pixels + ");");
 	}
-	
+
 	/**
 	 * This method will scroll the page up based on the pixels provided.
 	 * 
@@ -290,23 +291,22 @@ public class CommonMethods extends BaseClass {
 	public static void scrollUp(int pixels) {
 		getJSObject().executeScript("window.scrollBy(0,-" + pixels + ");");
 	}
-	
+
 	/**
 	 * This method will select the given day in a list of calendar days.
 	 * 
 	 * @param days
 	 * @param dayToSelect
 	 */
-	public static void selectCalendarDate(List<WebElement>days, String dayToSelect) {
-		for(WebElement day : days) {
-			if(day.getText().equals(dayToSelect) && day.isEnabled()) {
+	public static void selectCalendarDate(List<WebElement> days, String dayToSelect) {
+		for (WebElement day : days) {
+			if (day.getText().equals(dayToSelect) && day.isEnabled()) {
 				click(day);
 				break;
 			}
 		}
 	}
-	
-	
+
 	/**
 	 * This method scrolls the page until given element is in view.
 	 * 
@@ -315,59 +315,72 @@ public class CommonMethods extends BaseClass {
 	public static void scrollToElement(WebElement element) {
 		getJSObject().executeScript("arguments[0].scrollIntoView(true)", element);
 	}
-	
-	
-	
+
 	public static void switchToChildWindow() {
 		String mainWindow = driver.getWindowHandle();
 		Set<String> allWindowHandles = driver.getWindowHandles();
-		
-		for(String window : allWindowHandles) {
-			if(!window.equals(mainWindow)) {
+
+		for (String window : allWindowHandles) {
+			if (!window.equals(mainWindow)) {
 				driver.switchTo().window(window);
 			}
 		}
-		
-		//Aleternative solution
+
+		// Aleternative solution
 //		Iterator<String> it = allWindowHandles.iterator();
 //
 //		String window1 = it.next();
 //		String window2 = it.next();
 //
 //		driver.switchTo().window(window2);
-		
+
 	}
-	
+
 	/*
-	 * This method takes the screenshot of the current page and saves it under the screenshots folder
+	 * This method takes the screenshot of the current page and saves it under the
+	 * screenshots folder
 	 * 
 	 * @param fileName
 	 */
-	public static void takeScreenshot(String fileName) {
-		//create an object that can take screenshot
+	public static String takeScreenshot(String fileName) {
+		// create an object that can take screenshot
 		TakesScreenshot ssDriver = (TakesScreenshot) driver;
-		
-		//take the screenshot using the ssDriver
+
+		// take the screenshot using the ssDriver
 		File screenShot = ssDriver.getScreenshotAs(OutputType.FILE);
+
+		String screenShotFilePath = Constant.SCREENSHOT_FILEPATH + getTimeStamp() + fileName;
+
 		try {
-			File screenShotDir = new File("screenshots");
-			
-			//check if directory exists
-			if(!screenShotDir.exists()) {
+			File screenShotDir = new File(Constant.SCREENSHOT_FILEPATH);
+
+			// check if directory exists
+			if (!screenShotDir.exists()) {
 				screenShotDir.mkdir();
 			}
-			
-			File screenshotLocation = new File(screenShotDir + "/" + fileName);
+
+			File screenshotLocation = new File(screenShotFilePath);
 			Files.copy(screenShot, screenshotLocation);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("screenshot can not be created");
 		}
+
+		return screenShotFilePath;
 	}
 	
 	
-
-
+	/**
+	 * This method returns a time stamp string
+	 * @return
+	 */
+	public static String getTimeStamp() {
+		Date date = new Date();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss_");
+		
+		return sdf.format(date);
+	}
 
 }
