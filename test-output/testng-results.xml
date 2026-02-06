@@ -1,141 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="6" total="8" passed="0" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-05T01:57:02 EST" name="Default suite" finished-at="2026-02-05T01:58:47 EST" duration-ms="104835">
+  <suite started-at="2026-02-05T15:56:34 EST" name="GroupsDemoSuite" finished-at="2026-02-05T15:56:35 EST" duration-ms="397">
     <groups>
-      <group name="addEmployee">
-        <method signature="AddEmployeeTest.addEmployee(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" name="addEmployee" class="com.neotech.testcases.AddEmployeeTest"/>
-      </group> <!-- addEmployee -->
+      <group name="group2">
+        <method signature="GroupDemo.test1()[pri:3, instance:com.neotech.testcases.GroupDemo@31f9b85e]" name="test1" class="com.neotech.testcases.GroupDemo"/>
+      </group> <!-- group2 -->
+      <group name="group1">
+        <method signature="GroupDemo.test1()[pri:3, instance:com.neotech.testcases.GroupDemo@31f9b85e]" name="test1" class="com.neotech.testcases.GroupDemo"/>
+        <method signature="GroupDemo.test2()[pri:1, instance:com.neotech.testcases.GroupDemo@31f9b85e]" name="test2" class="com.neotech.testcases.GroupDemo"/>
+      </group> <!-- group1 -->
     </groups>
-    <test started-at="2026-02-05T01:57:02 EST" name="Default test" finished-at="2026-02-05T01:58:47 EST" duration-ms="104835">
+    <test started-at="2026-02-05T15:56:34 EST" name="GroupsDemoTest" finished-at="2026-02-05T15:56:35 EST" duration-ms="397">
       <class name="com.neotech.testcases.AddEmployeeTest">
-        <test-method is-config="true" signature="generateReport()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:57:02 EST" name="generateReport" finished-at="2026-02-05T01:57:02 EST" duration-ms="175" status="PASS">
+        <test-method is-config="true" signature="generateReport()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@1f59a598]" started-at="2026-02-05T15:56:34 EST" name="generateReport" finished-at="2026-02-05T15:56:34 EST" duration-ms="168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:57:03 EST" name="setUp" finished-at="2026-02-05T01:57:05 EST" duration-ms="2206" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addEmployee(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:57:05 EST" name="addEmployee" data-provider="excelData" finished-at="2026-02-05T01:57:43 EST" duration-ms="38611" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[John]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Smith]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Chinese Development Center]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[johnWick200029]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Secret@123!!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addEmployee -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:57:43 EST" name="tearDown" finished-at="2026-02-05T01:57:44 EST" duration-ms="136" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:57:44 EST" name="setUp" finished-at="2026-02-05T01:57:45 EST" duration-ms="1429" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addEmployee(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:57:45 EST" name="addEmployee" data-provider="excelData" finished-at="2026-02-05T01:58:14 EST" duration-ms="28523" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Mary]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ann]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[German Regional HQ]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[mary200029]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Secret@123!!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addEmployee -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:58:14 EST" name="tearDown" finished-at="2026-02-05T01:58:14 EST" duration-ms="121" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:58:14 EST" name="setUp" finished-at="2026-02-05T01:58:15 EST" duration-ms="1308" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addEmployee(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:58:15 EST" name="addEmployee" data-provider="excelData" finished-at="2026-02-05T01:58:46 EST" duration-ms="31480" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[David]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Brown]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Indian Development Center]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[david2000029]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Secret@123!!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addEmployee -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:58:46 EST" name="tearDown" finished-at="2026-02-05T01:58:47 EST" duration-ms="140" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="writeReport()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@7d20d0b]" started-at="2026-02-05T01:58:47 EST" name="writeReport" finished-at="2026-02-05T01:58:47 EST" duration-ms="200" status="PASS">
+        <test-method is-config="true" signature="writeReport()[pri:0, instance:com.neotech.testcases.AddEmployeeTest@1f59a598]" started-at="2026-02-05T15:56:34 EST" name="writeReport" finished-at="2026-02-05T15:56:35 EST" duration-ms="182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- writeReport -->
       </class> <!-- com.neotech.testcases.AddEmployeeTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.neotech.testcases.GroupDemo">
+        <test-method signature="test1()[pri:3, instance:com.neotech.testcases.GroupDemo@31f9b85e]" started-at="2026-02-05T15:56:34 EST" name="test1" finished-at="2026-02-05T15:56:34 EST" duration-ms="9" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at com.neotech.testcases.GroupDemo.test1(GroupDemo.java:36)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test2()[pri:1, instance:com.neotech.testcases.GroupDemo@31f9b85e]" started-at="2026-02-05T15:56:34 EST" name="test2" finished-at="2026-02-05T15:56:34 EST" depends-on-methods="com.neotech.testcases.GroupDemo.test1" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.neotech.testcases.GroupDemo.test2() on instance com.neotech.testcases.GroupDemo@31f9b85e depends on not successfully finished methods 
+[com.neotech.testcases.GroupDemo.test1() on instance com.neotech.testcases.GroupDemo@31f9b85e]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.neotech.testcases.GroupDemo.test2() on instance com.neotech.testcases.GroupDemo@31f9b85e depends on not successfully finished methods 
+[com.neotech.testcases.GroupDemo.test1() on instance com.neotech.testcases.GroupDemo@31f9b85e]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+      </class> <!-- com.neotech.testcases.GroupDemo -->
+    </test> <!-- GroupsDemoTest -->
+  </suite> <!-- GroupsDemoSuite -->
 </testng-results>
